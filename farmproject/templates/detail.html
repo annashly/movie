@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+         <img src="{{farm.img.url}}" style="width:250px; height:250px;">
+        </div>
+        <div class="col-md-6">
+         <h2>{{farm.name}}</h2>
+         <h6> {{farm.desc}}</h6>
+         <h6>{{farm.price}}  </h6>
+            <a class="btn btn-warning" href="{% url 'farmapp:update' farm.id %}">update</a>
+            <a class="btn btn-danger" href="{% url 'farmapp:delete' farm.id %}">delete</a><br>
+        </div>
+    </div>
+</div>
+{% endblock %}
