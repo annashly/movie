@@ -22,6 +22,7 @@ def add_farm(request):
         img = request.FILES['img']
         farm=Farm(name=name,desc=desc,price=price,img=img)
         farm.save()
+        return redirect('/')
     return render(request,'add.html')
 def update(request,id):
     farm=Farm.objects.get(id=id)
